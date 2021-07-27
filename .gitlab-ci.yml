@@ -29,7 +29,7 @@ package:
    stage: package
    script:
      - docker build -t steinko/helloworldaws .
-     - docker login -u steinko -p "$DOCKER_HUB_PASSWORD"
+     - docker login -u steinko -p RoxyMusic11
      - docker push steinko/helloworldaws
 
 
