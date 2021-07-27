@@ -41,6 +41,7 @@ deploy:
 
 acceptancetest:
    stage: acceptancetest
+   image: openjdk:15
    script:
      - cd apitest
      - ./gradlew cucumber --info
