@@ -24,4 +24,4 @@ deploy:
    stage: deploy
    image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
    script:
-     - aws elasticbeanstalk  deploy
+     - aws elasticbeanstalk  update-application
