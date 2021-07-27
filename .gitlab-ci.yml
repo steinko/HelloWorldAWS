@@ -5,6 +5,7 @@ stages:
 
 build:
   stage: build
+  image: openjdk:15
   script:
     - ./gradlew assemble
   artifacts:
@@ -14,5 +15,6 @@ build:
 
 test:
   stage: test
+  image: openjdk:15
   script:
     - ./gradlew check
