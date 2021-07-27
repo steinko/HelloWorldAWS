@@ -13,14 +13,14 @@ build:
     - ./gradlew assemble
   artifacts:
     paths:
-      - ./build/libs/HelloWorldAWS-0.0.1-SNAPSHOT.jar
+      - ./build/libs/helloworldaws.jar
 
 
 test:
   stage: test
   image: openjdk:15
   script:
-    - ./gradlew check
+    - ./gradlew check --info
 
 package:
    image: docker:latest
