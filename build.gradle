@@ -2,11 +2,14 @@ plugins {
 	id 'org.springframework.boot' version '2.5.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'application'
 }
 
-group = 'org.steinko'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+
+compileJava {
+   sourceCompatibility = 15
+   targetCompatibility = 15
+}
 
 repositories {
 	mavenCentral()
@@ -19,4 +22,9 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'org.steinko.helloworldaws.HelloWorldAwsApplication'
 }

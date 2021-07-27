@@ -1,4 +1,4 @@
-package org.steinko.HelloWorldAWS;
+package org.steinko.helloworldaws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

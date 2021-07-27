@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - package
   - deploy
   - acceptancetest
 
@@ -21,11 +22,20 @@ test:
   script:
     - ./gradlew check
 
+package:
+   image: docker:latest
+   stage: package
+   script:
+     - docker build -t steinko/helloworldaws .
+     - docker login -u steinko -p "$DOCKER_HUB_PASSWORD"
+     - docker push steinko/helloworldaws
+
+
 deploy:
    stage: deploy
    image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
    script:
-     - aws elasticbeanstalk  update-application --application-name HelloWorldAWS
+     - aws elasticbeanstalk  help
 
 acceptancetest:
    stage: acceptancetest
