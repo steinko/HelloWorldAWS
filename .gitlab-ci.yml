@@ -1,0 +1,18 @@
+stages:
+  - build
+  - test
+
+
+build:
+  stage: build
+  script:
+    - ./gradlew assemble
+  artifacts:
+    paths:
+      - ./build/libs/HelloWorldAWS-0.0.1-SNAPSHOT.jar
+
+
+test:
+  stage: test
+  script:
+    - ./gradlew check
