@@ -1,4 +1,4 @@
-package org.steinko.HelloWorldAWS;
+package org.steinko.helloworldaws;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
