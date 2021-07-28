@@ -4,6 +4,7 @@ stages:
   - package
   - deploy
   - acceptancetest
+  - production
 
 build:
   stage: build
@@ -45,3 +46,13 @@ acceptancetest:
    script:
      - cd apitest
      - ./gradlew cucumber --info
+
+production:
+   stage: production
+   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+   script:
+     - aws elasticbeanstalk  help
+   environment:
+    name: production
+    url: http://helloworlddocker-production.eba-y2u4u3mw.eu-north-1.elasticbeanstalk.com:80/hello
+
