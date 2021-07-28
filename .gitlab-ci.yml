@@ -37,7 +37,7 @@ deploy:
    stage: deploy
    image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
    script:
-     - aws elasticbeanstalk  update-application --application-name HelloWorldDocker   --region eu-north-1
+     - aws elasticbeanstalk  update-application --application-name HelloWorldDocker   --region eu-north-1 help
 
 acceptancetest:
    stage: acceptancetest
